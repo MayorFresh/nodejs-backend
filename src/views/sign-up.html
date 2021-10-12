@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <form action="#" class="" autocomplete="on"> 
+            <div class="box">
+                <h2>Sign Up Page</h2>
+                <input type="text" placeholder="Firstnmae" id="firstname"><br>
+                <input type="text" placeholder="Lastname" id="lastname"><br>
+                <input type="email" placeholder="Email" id="email"><br>
+                <input type="date" placeholder="dob" id="dob"><br>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <input type="text" placeholder="Username" id="username"><br>
+                <input type="password" placeholder=" Create Password" id="password"><br>
+                <input type="password" placeholder=" Confirm Password" id="password">
+                <h5><a href="#">forget password?</a></h5><br>
+                <button type="submit" onclick="myFunction()">Sign Up</button>
+                <p>Already a user sign in <a href="index.html">here</a></p>
+
+                <button><a href="homepage.html">Homepage</a></button>
+                
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function myFunction() 
+        {   
+            alert("You have been registered successfully");
+        }
+    </script>
+</body>
+</html>
