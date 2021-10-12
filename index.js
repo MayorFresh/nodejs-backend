@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const chalk = require('chalk')
 const userRouter = require('./router/user')
+const todoRouter = require('./router/todo')
 
 
 
@@ -26,6 +27,8 @@ app.use(express.static(pathToImage))
 app.use(express.json())
 
 app.use(userRouter)
+
+app.use(todoRouter)
 
 
 
