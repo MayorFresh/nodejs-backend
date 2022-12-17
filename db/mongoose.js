@@ -13,3 +13,5 @@ mongoose.connect(connectionURL, {
         console.log(chalk.bgMagenta.white(`Successfully Connected to the database`))
     // }
 })
+
+db = mongoose.connection

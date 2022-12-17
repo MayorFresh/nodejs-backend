@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="container">
-        <form action="#" class="">
+        <form action="/user/login" method="post">
             <div class="box">
                 <img src="user.png" alt="user">
                 <h2>Sign In</h2>
-                <input type="text" placeholder="Username" id="username"><br>
-                <input type="password" placeholder="Password" id="password">
+                <input type="text" name="email" placeholder="Email" id="email" required><br>
+                <input type="password" name="password" placeholder="Password" id="password" required>
                 <h5><a href="#">forget password?</a></h5><br>
                 <button type="submit" onclick="myFunction()">Login</button>
                 <p>not a user sign up <a href="sign-up.html">here</a></p>
@@ -29,9 +29,9 @@
         // onload(alert("Welcome!!!"));
         
         function myFunction() 
-       // {
-           // alert("Login Successful");
-       // }
+    //    {
+    //        alert("Login Successful");
+    //    }
     //</script>
 </body>
 </html>

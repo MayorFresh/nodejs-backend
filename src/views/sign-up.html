@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,23 +10,19 @@
 <body>
     <div class="container">
 
-        <form action="#" class="" autocomplete="on"> 
+        <form action="/newUser" method="post"> 
             <div class="box">
                 <h2>Sign Up Page</h2>
-                <input type="text" placeholder="Firstnmae" id="firstname"><br>
-                <input type="text" placeholder="Lastname" id="lastname"><br>
-                <input type="email" placeholder="Email" id="email"><br>
-                <input type="date" placeholder="dob" id="dob"><br>
-                <select name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <input type="text" placeholder="Username" id="username"><br>
-                <input type="password" placeholder=" Create Password" id="password"><br>
-                <input type="password" placeholder=" Confirm Password" id="password">
+                <input type="text" placeholder="Firstname" name="firstName" id="firstname" required><br>
+                <input type="text" placeholder="Lastname" name="lastName" id="lastname" required><br>
+                <input type="email" placeholder="Email" name="email" id="email" required><br>
+                <input type="tel" placeholder="Age" name="age" id="age" required><br>
+                <input type="text" placeholder="Phone Number" name="phoneNumber" id="phno" required><br>
+                <input type="password" placeholder="Password" name="password" id="password" required><br>
+                <input type="text" placeholder="address" name="address" id="address" required>
                 <h5><a href="#">forget password?</a></h5><br>
-                <button type="submit" onclick="myFunction()">Sign Up</button>
-                <p>Already a user sign in <a href="index.html">here</a></p>
+                <button type="submit">Sign Up</button>
+                <p>Already a user sign in <a href="sign-in.html">here</a></p>
 
                 <button><a href="homepage.html">Homepage</a></button>
                 

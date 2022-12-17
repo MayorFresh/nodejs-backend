@@ -11,9 +11,14 @@ const todoSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-})
+}, {timestamps: true})
 
-//to nme your collection name
+todoSchema.pre('save', async (next) => {
+    if(todoSchema){
+        console.log("running this code before todo")
+    }
+    next()
+})
 
 const ToDo = mongoose.model('ToDo', todoSchema)
 module.exports = ToDo

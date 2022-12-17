@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 //this is where we create our schema
 /*
 model is where we view 
@@ -10,19 +11,19 @@ use module.export() to export the user schema
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         lowercase: true
     },
     lastName: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         lowercase: true
     },
     email: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         unique: true,
         lowercase: true,
@@ -39,7 +40,7 @@ const userSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         unique: true,
         length: {min: 11, max: 11},
@@ -51,7 +52,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         // unique: true,
         length: {min: 8},
@@ -63,12 +64,29 @@ const userSchema = new mongoose.Schema({
     },
     address: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
+    },
+    token: {
+        type: String
     }
 }, {timestamps: true})
 
-const User = mongoose.model("User", userSchema)
+//for hashing of password
+// userSchema.pre('save', async function(next) {
+//     const user = this
+
+//     if(user.password){
+//         const hashpass = await bcrypt.hash(user.password, 10)
+//         user.password = hashpass
+//         console.log("hash successful")
+//     }
+
+//     next()
+// });
+
+const User = mongoose.model("newusers", userSchema)
 
 // to export the user schema
 module.exports = User
+

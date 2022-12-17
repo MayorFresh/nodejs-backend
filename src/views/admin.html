@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin dashboard</title>
+    <style>
+       
+        .cont{
+            padding: 20px;
+            width: 80%;
+            border: 3px solid blue;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cont div{
+            width: 45%;
+        }
+        .cont h2{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .closed{
+            display: none;
+            opacity: 0;
+        }
+        .open{
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Admin Login Successful</h1>
+    <h2 style="text-align: center;">Welcome to your dashboard</h2>
+
+    <!-- <button style="background: red; color: white; float: right;" onclick="logout()">Logout</button><br> -->
+    <form action="/logout" method="get">
+        <button style="background: red; color: white; float: right;">Logout</button><br>
+    </form>
+
+    <label for="allusers">Check last registered user</label>
+    <button onclick="action()">CHECK</button>
+
+   <div class="cont">
+        <div>
+            <h2>Names</h2>
+            <p id="test2"></p>
+        </div>
+        <div>
+            <h2>Email</h2>
+            <p id="test" ></p>
+        </div>
+   </div>
+   <button id="close" class="closse">Close</button>
+
+   <img src="img/users/u1.jpg" />
+    
+
+    <script>
+       const action = async () => {
+           const res = await fetch("/allUsers");
+           const ajson =  await res.json();
+        //    const mayowa = JSON.stringify(ajson);
+            // console.log(ajson)
+            // let ag = mayowa.age;
+            // console.log(ajson.allUsers[0]._id);
+            
+            
+            for (let i=0; i<=ajson.allUsers.length; i++ ) {
+                var a = ajson.allUsers[i].email
+                console.log(a);
+                var b = ajson.allUsers[i].firstName
+                const test = await document.getElementById('test')
+                const test2 = await document.getElementById('test2')
+                test.innerHTML += `${a}<br>`
+                test2.innerHTML += `${b}<br>`
+                
+            }
+            // let a = ajson
+            
+       }
+    //    var pop = document.querySelector(".open")
+    //    var but = document.querySelector(".closse")
+
+    //    but.addEventListener('click', function() {
+    //        pop.classList.add('.closed')
+    //    })
+    //    pop.addEventListener('transitionend', function(){
+    //        pop.classList.add('removed')
+    //    })
+    //    pop.addEventListener('transitionend', function() {
+    //        if(pop.classList.contains('closed')) {
+    //            pop.classList.add('removed')
+    //        }
+    //    })
+ 
+ 
+    </script>
+</body>
+</html>
